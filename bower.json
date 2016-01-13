@@ -1,0 +1,21 @@
+{
+  "name": "demo",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Nicolas Molina Monroy <nicolas.molina.monroy@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
