@@ -10,15 +10,20 @@
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.11.0",
+    "cors": "^2.7.1",
     "express": "^4.13.3",
     "gulp-live-server": "0.0.29",
+    "gulp-protractor": "^2.1.0",
+    "istanbul": "^0.4.2",
     "karma": "^0.13.19",
+    "karma-coverage": "^0.5.3",
     "karma-mocha": "^0.2.1",
     "karma-phantomjs-launcher": "^0.2.3",
     "mocha": "^2.3.4",
     "phantomjs": "^1.9.19"
   },
   "devDependencies": {
-    "karma-mocha-reporter": "^1.1.5"
+    "karma-mocha-reporter": "^1.1.5",
+    "protractor": "^3.0.0"
   }
 }

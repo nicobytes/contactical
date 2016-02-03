@@ -1,18 +1,29 @@
 <html>
 	<head>
-		<script src="lib/angular/angular.min.js"></script>
 		<title>Mocha Spec Runner</title>
 		<link rel="stylesheet" href="lib/mocha/mocha.css">
+
+		<!-- head:js -->
+		<!-- endinject -->
+		
+		<!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+    <!-- <script src="cordova.js"></script> -->
 	</head>
-	<body ng-app="myAddressBook">
+	<body ng-app="app">
 		<div id="mocha"></div>
 		<script src="lib/mocha/mocha.js"></script>
 		<script src="lib/chai/chai.js"></script>
 		<script>
 			mocha.setup('bdd');
 		</script>
-		<script src="app/app.js"></script>
-		<script src="app/app.spec.js"></script>
+		<script src="lib/angular-mocks/angular-mocks.js"></script>
+
+		<!-- inject:js -->
+		<!-- endinject -->
+
+		<!-- tests:js -->
+		<!-- endinject -->
+
 		<script>
 			mocha.run();
 		</script>
