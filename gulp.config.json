@@ -18,6 +18,7 @@
     "./app/app/**/*.service.js",
     "./app/app/**/*.module.js",
     "./app/app/**/*.directive.js",
+    "./app/app/**/*.filter.js",
     "./app/app/**/*.controller.js"
   ],
   "tests": [

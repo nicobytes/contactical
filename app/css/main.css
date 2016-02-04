@@ -59,7 +59,7 @@ input {
 	
 }
 
-avatar span {
+app-avatar span {
 	padding: 4px 5px;
 	margin: 0px 12px;
 	border: 1px solid #999;

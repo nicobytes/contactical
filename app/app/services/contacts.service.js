@@ -3,52 +3,25 @@
 
   angular
     .module('app')
-    .factory('contactsService', imgurService);
+    .factory('contactsService', contactsService);
 
-  imgurService.$inject = [
-    '$http',
-    '$q'
+  contactsService.$inject = [
+    '$firebaseArray',
   ];
 
-  function imgurService( $http, $q ) {
-
-    var path = 'https://api.imgur.com/3/';
-    var clientId = "bdff09d775f47b9";
-
+  function contactsService( $firebaseArray ) {
+    
     var service = {
-      uploadImage: uploadImage,
+      getAllContacts: getAllContacts,
     };
 
     return service;
 
     ////////////
 
-    function uploadImage( image ){
-
-      var typeImage = typeof image;
-      if(typeImage !== 'string') throw new Error();
-
-      return $http({
-        method: 'POST',
-        url: path + 'image',
-        headers: {
-          'Authorization' : 'Client-ID '+ clientId
-        },
-        data: {
-          image: image,
-          type: 'base64'
-        },
-      })
-      .then( complete )
-      .catch( failed );
-
-      function complete( response ) {
-        return $q.when( response.data.data.link );
-      } 
-
-      function failed( response ) {
-        return $q.reject( response.data );
-      }
+    function getAllContacts(){
+      var reference = new Firebase('https://contactical.firebaseio.com/contacts');
+      return $firebaseArray(reference);
     }
 
   }

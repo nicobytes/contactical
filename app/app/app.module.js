@@ -9,9 +9,10 @@
   angular.module('app', [
     // Core 
     'firebase',
-    'ngMessages',
+    //'ngMessages',
     //Widgets
     'app.widgets',
+    'app.filters',
     //Feature areas
     'app.contacts',
   ])
