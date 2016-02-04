@@ -20,5 +20,9 @@
     "mocha": "~2.3.4",
     "chai": "~3.4.2",
     "angular-mocks": "~1.4.8"
+  },
+  "devDependencies": {
+    "firebase": "~2.4.0",
+    "angularfire": "~1.1.3"
   }
 }

@@ -1,0 +1,28 @@
+{
+  "test": "./tests/",
+  "index": "./app/index.html",
+  "indexMocha": "./tests/unit/index.html",
+  "includeCss": "./app/build/css/app.min.css",
+  "includeVendors": "./app/build/js/vendors.min.js",
+  "includeJs": "./app/build/js/app.min.js",
+  "vendorjs": [
+    "./app/lib/angular/angular.min.js",
+    "./app/lib/firebase/firebase.js",
+    "./app/lib/angularfire/dist/angularfire.min.js"
+  ],
+  "css": [
+    "./app/css/main.css"
+  ],
+  "js": [
+    "./app/app/app.module.js",
+    "./app/app/**/*.service.js",
+    "./app/app/**/*.module.js",
+    "./app/app/**/*.directive.js",
+    "./app/app/**/*.controller.js"
+  ],
+  "tests": [
+    "./tests/unit/**/*.service.spec.js",
+    "./tests/unit/**/*.controller.spec.js"
+  ],
+  "build": "./app/build/"
+}

@@ -1,17 +1,19 @@
 <html>
 	<head>
-		<script src="lib/angular/angular.min.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endinject -->
+		<!-- vendors:js -->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.min.js"></script>
+    <!-- endinject -->
 	</head>
-	<body ng-app="myAddressBook">
+	<body ng-app="app">
 		<div class="app-title">
-			<h1>
-				Contactical
-			</h1>
-			<h2>
-			    The Ironclad Address Book
-			</h2>
+			<h1>Contactical + Firebase</h1>
+			<h2> The Ironclad Address Book</h2>
 		</div>
 		<div ng-controller="ContactsController as list" class="contact-list inline-module">
 			<div ng-repeat='contact in list.contacts'>
@@ -29,30 +31,40 @@
 		</div>
 		<div ng-controller="AddContact as add" class="add-contact inline-module" name="contactForm">
 	    <form ng-submit="add.addContact( contactForm )">
-            <h3>Add A New Contact</h3>	
-            <label>
-                Name (Req'd)
-                <input required type="text" ng-model="add.newContact.name">
-            </label>
-            <label>
-                Age
-                <input type="number" ng-model="add.newContact.age">
-            </label>
-            <label for="occupation">
-                Occupation
-                <input type="text" ng-model="add.newContact.occupation">
-            </label>
-            <label for="">
-                Email (Req'd)
-                <input type="email" required ng-model="add.newContact.email">
-            </label>
-            <label for="submit">
-                Add New Contact
-                <input type="submit" id="submitNewContact">	
-            </label>
-            <div class="warning" ng-if="errorMessage">Please check the information and try again.</div>
-        </form>
+        <h3>Add A New Contact</h3>	
+        <label>
+          Name (Req'd)
+          <input required type="text" ng-model="add.newContact.name">
+        </label>
+        <label>
+          Age
+          <input type="number" ng-model="add.newContact.age">
+        </label>
+        <label for="occupation">
+          Occupation
+          <input type="text" ng-model="add.newContact.occupation">
+        </label>
+        <label for="">
+          Email (Req'd)
+          <input type="email" required ng-model="add.newContact.email">
+        </label>
+        <label for="submit">
+          Add New Contact
+          <input type="submit" id="submitNewContact">	
+        </label>
+        <div class="warning" ng-if="errorMessage">
+          Please check the information and try again
+        </div>
+    </form>
 	</div>
-		<script src="app/app.js"></script>
+	<!-- inject:js -->
+  <script src="app/app.module.js"></script>
+  <script src="app/services/contacts.service.js"></script>
+  <script src="app/contacts/contacts.module.js"></script>
+  <script src="app/widgets/widgets.module.js"></script>
+  <script src="app/widgets/avatar.directive.js"></script>
+  <script src="app/contacts/add-contact.controller.js"></script>
+  <script src="app/contacts/contacts-list.controller.js"></script>
+  <!-- endinject -->
 	</body>
 </html>
