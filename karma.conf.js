@@ -20,12 +20,22 @@ module.exports = function( config ){
 		},
 		files: [
 			'app/lib/angular/angular.min.js',
+	    './app/lib/firebase/firebase.js',
+	    './app/lib/angularfire/dist/angularfire.min.js',
 			'app/lib/angular-mocks/angular-mocks.js',
 			'app/lib/chai/chai.js',
 			//App
-			'app/app/app.js',
+			'./app/app/app.module.js',
+	    './app/app/**/*.service.js',
+	    './app/app/**/*.module.js',
+	    './app/app/**/*.directive.js',
+	    './app/app/**/*.filter.js',
+	    './app/app/**/*.controller.js',
 			//Tests
-			'tests/unit/**/*.spec.js'
+			'./tests/unit/**/*.service.spec.js',
+	    './tests/unit/**/*.controller.spec.js',
+	    './tests/unit/**/*.directive.spec.js',
+	    './tests/unit/**/*.filter.spec.js'
 		]
 	});
 }

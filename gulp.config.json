@@ -23,7 +23,9 @@
   ],
   "tests": [
     "./tests/unit/**/*.service.spec.js",
-    "./tests/unit/**/*.controller.spec.js"
+    "./tests/unit/**/*.controller.spec.js",
+    "./tests/unit/**/*.directive.spec.js",
+    "./tests/unit/**/*.filter.spec.js"
   ],
   "build": "./app/build/"
 }

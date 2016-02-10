@@ -23,7 +23,7 @@ gulp.task('serve', function(){
 		.on('change', browserSync.reload);
 });
 
-gulp.task('serve-test', function(){
+gulp.task('serve-mocha', ['build-mocha'], function(){
 	browserSync.init({
 		notify: false,
 		port: 8081,
@@ -36,7 +36,7 @@ gulp.task('serve-test', function(){
 		.on('change', browserSync.reload);
 });
 
-gulp.task('serve-coverage', ['tests-unit'], function(){
+gulp.task('test', ['tests-unit'], function(){
 	browserSync.init({
 		notify: false,
 		port: 7777,
@@ -110,6 +110,22 @@ gulp.task('css', function( done ) {
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest( dest ))
     .on('end', done);
+});
+
+gulp.task('build-mocha', function ( done ) {
+
+  
+  var vendors = gulp.src( paths.vendorjs, {read: false});
+  var js = gulp.src( paths.js, {read: false});
+  var tests = gulp.src( paths.tests, {read: false});
+  
+  gulp.src( paths.indexMocha )
+    .pipe( inject( vendors , { ignorePath: ["/app/"], addRootSlash: false, name: 'head'} ))
+    .pipe( inject( js, { ignorePath: ["/app/"], addRootSlash: false } ))
+    .pipe( inject( tests , { relative: true, name: 'tests'} ))
+    .pipe( gulp.dest('./tests/unit') )
+    .on('end', done);
+
 });
 
 /**

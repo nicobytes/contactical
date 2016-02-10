@@ -17,13 +17,15 @@
     vm.addContact = addContact;
 
     function addContact( form ){
-      vm.contacts.$add(vm.newContact)
+      vm.contacts.$add( vm.newContact )
       .then( complete );
 
       function complete(){
         vm.newContact = {};
-        form.$setPristine();
-        form.$setUntouched();
+        if(form){
+          form.$setPristine();
+          form.$setUntouched();
+        }
       }
       
     }
