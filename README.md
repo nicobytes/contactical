@@ -1,5 +1,5 @@
 # contactical
-Course TDD for Angular
+Contactical + Firebase
 
 ## Unit Tests
 ![alt tag](https://raw.githubusercontent.com/nicobytes/contactical/master/imgs/coverage.png)
